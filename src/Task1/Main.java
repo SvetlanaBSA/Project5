@@ -2,17 +2,17 @@ package Task1;
 
 public class Main {
     public static void main(String[] args) {
-        int lenght = 5;
-        Figure figureS = new Figure(lenght);
-        System.out.println(figureS.print());
+        Square figureS = new Square(5);
+        System.out.println("S = " + figureS.figureArea());
 
-        Figure figureR = new Figure(5, 10);
-        System.out.println(figureS.print());
+        Rectangle figureR = new Rectangle(5, 10);
+        System.out.println("S = " + figureR.figureArea());
 
-        Figure figureT = new Figure(3,4,5);
-        System.out.println(figureS.print());
+        Triangle figureT = new Triangle(3,4,5);
+        System.out.println("S = " + figureT.figureArea());
 
-        Figure figureC = new Figure(3, 3.14);
-        System.out.println(figureS.print());
+        Circle figureC = new Circle(3);
+        System.out.println("S = " + figureC.figureArea());
+
     }
 }

@@ -1,9 +1,15 @@
 package Task1;
 
-class Rectangle extends Figure{
+final class Rectangle extends Figure{
+    private int length, height;
+
+    Rectangle(int length, int height) {
+        this.length = length;
+        this.height = height;
+    }
 
     @Override
-    int figureArea () {
-        return (super.lenght * super.height);
+    int figureArea() {
+        return (this.length * this.height);
     }
 }
