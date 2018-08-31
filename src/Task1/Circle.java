@@ -1,9 +1,14 @@
 package Task1;
 
 class Circle extends Figure {
+    private int radius;
+
+    Circle(int radius) {
+        this.radius = radius;
+    }
+
     @Override
     int figureArea(){
-        super.area = (int) (super.pi * Math.pow(super.radius, super.radius));
-        return super.area;
+        return (int) (3.14 * Math.pow(this.radius, 2));
     }
 }
