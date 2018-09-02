@@ -1,6 +1,6 @@
 package Task1;
 
-public class Main {
+public class Start1 {
     public static void main(String[] args) {
         Square figureS = new Square(5);
         System.out.println("S = " + figureS.figureArea());

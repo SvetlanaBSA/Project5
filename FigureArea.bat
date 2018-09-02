@@ -1,4 +1,4 @@
 mkdir target
-javac -d target src/Task1/Main.java
-java -cp target Task1/Main.java
+javac -encoding utf8 -sourcepath src -d target src/Task1/Start1.java
+java -cp target Task1.Start1
 pause
