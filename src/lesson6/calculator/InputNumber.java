@@ -3,8 +3,8 @@ package lesson6.calculator;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-class InputNumber {
-    private static final Scanner scan = new Scanner(System.in);
+class InputNumber implements IsInputNumber{
+    private static final Scanner SCANNER = new Scanner(System.in);
 
     int inputFirst() {
         System.out.println("Введите первое число: ");
@@ -18,10 +18,11 @@ class InputNumber {
         return secondNumber;
     }
 
-    private int inputNumber(){
+    @Override
+    public int inputNumber(){
         int number;
         try {
-            number = scan.nextInt();
+            number = SCANNER.nextInt();
         }
         catch (InputMismatchException e) {
             System.err.println("Ошибка. Несоответствие типа вводимого значения. Введите целые числа.");

@@ -4,15 +4,26 @@ public class Main {
     public static void main(String[] args) throws Exception {
         InputNumber input = new InputNumber();
         int firstNumber = input.inputFirst();
-        int secondNumber = input.inputSecond();
 
-        EasyCalculations calc = new EasyCalculations(firstNumber, secondNumber);
-        System.out.println(firstNumber + " + " + secondNumber + " = " + calc.addition(firstNumber,secondNumber));
-        System.out.println(firstNumber + " - " + secondNumber + " = " + calc.subtraction(firstNumber,secondNumber));
-        System.out.println(firstNumber + " * " + secondNumber + " = " + calc.multiplication(firstNumber,secondNumber));
-        System.out.println(firstNumber + " / " + secondNumber + " = " + calc.division(firstNumber,secondNumber));
+        CalcOperation operation = new CalcOperation();
+        String calcOperation;
+        calcOperation = operation.inputOperation();
 
-        SqrtCalculation sqrtCalc = new SqrtCalculation(firstNumber);
-        System.out.println("Корень квадратный из " + firstNumber + " числа = "+ sqrtCalc.sqrtNumber(firstNumber));
+        if (calcOperation.equals("+") || calcOperation.equals("-") || calcOperation.equals("*") || calcOperation.equals("/")) {
+            int secondNumber = input.inputSecond();
+            EasyCalculations easyCalculations = new EasyCalculations(firstNumber, secondNumber);
+            if (calcOperation.equals("+")) {
+                System.out.println(firstNumber + " + " + secondNumber + " = " + easyCalculations.addition(firstNumber, secondNumber));
+            } else if (calcOperation.equals("-")) {
+                System.out.println(firstNumber + " - " + secondNumber + " = " + easyCalculations.subtraction(firstNumber, secondNumber));
+            } else if (calcOperation.equals("*")) {
+                System.out.println(firstNumber + " * " + secondNumber + " = " + easyCalculations.multiplication(firstNumber, secondNumber));
+            } else if (calcOperation.equals("/")) {
+                System.out.println(firstNumber + " / " + secondNumber + " = " + easyCalculations.division(firstNumber, secondNumber));
+            }
+        } else if (calcOperation.equals("sqrt")) {
+            SqrtCalculation sqrtCalc = new SqrtCalculation(firstNumber);
+            System.out.println("Корень квадратный из числа " + firstNumber + " = " + sqrtCalc.sqrtNumber(firstNumber));
+        }
     }
 }

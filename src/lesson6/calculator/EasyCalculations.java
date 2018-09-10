@@ -30,6 +30,7 @@ class EasyCalculations extends EasyCalculator {
         try {
             result = firstNumber / secondNumber;
         } catch (ArithmeticException e) {
+            System.out.println("Деление на 0 запрещено.");
             System.err.println("Деление на 0 запрещено.");
             throw new ArithmeticException("Попытка деления на 0: firstNumber = " + firstNumber + "; secondNumber = " + secondNumber);
         }
